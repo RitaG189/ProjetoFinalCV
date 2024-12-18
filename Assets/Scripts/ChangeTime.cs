@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ChangeTime : MonoBehaviour
 {
+
     [Header("Skyboxes")]
     [SerializeField] private Material morningSkybox;
     [SerializeField] private Material morningOvercastSkybox;
@@ -20,23 +21,16 @@ public class ChangeTime : MonoBehaviour
 
 
     [Header("Light")]
-    [SerializeField] private Light directionaLight;
+    [SerializeField] private GameObject directionalLight;
 
-    [Header("Light Settings")]
-    private Color morningLightColor = Color.white; 
-    private float morningLightIntensity = 0.56f;   
-    private Color dayLightColor = Color.white; 
-    private float dayLightIntensity = 1.2f;   
-    private Color sunsetLightColor = new Color(0.8018868f, 0.3066828f, 0.1626469f);   
-    private float sunsetLightIntensity = 0.4f;     
-    private Color nightLightColor = new Color(0.2264151f, 0.2264151f, 0.2264151f);  
-    private float nightLightIntensity = 0.58f;       
+
+
 
     [Header("Button Pressed")]
     public int timeButtonPressed;
 
     private void Start() {
-        timeButtonPressed = 2;
+        timeButtonPressed = 1;
     }
 
     private void Update() 
@@ -45,34 +39,41 @@ public class ChangeTime : MonoBehaviour
         {
             case 1: 
                 PlayerPrefs.SetInt("Time", 1);
-                ChangeToTime(morningSkybox, morningOvercastSkybox, morningLightIntensity, morningLightColor );
+                ChangeToTime(morningSkybox, morningOvercastSkybox, 0.22f, Color.white, 0.22f, Color.white);
+                DynamicGI.UpdateEnvironment();
                 break;
             case 2: 
                 PlayerPrefs.SetInt("Time", 2);
-                ChangeToTime(daySkybox, dayOvercastSkybox, dayLightIntensity, dayLightColor);
+                ChangeToTime(daySkybox, dayOvercastSkybox, 1.2f, Color.white, 0f, Color.white);
+                DynamicGI.UpdateEnvironment();
                 break;
             case 3: 
                 PlayerPrefs.SetInt("Time", 3);
-                ChangeToTime(sunsetSkybox, sunsetOvercastSkybox, sunsetLightIntensity, sunsetLightColor);
+                ChangeToTime(sunsetSkybox, sunsetOvercastSkybox, 0.22f, new Color(0.8196079f, 0.4666667f, 0.1803922f), 0f, Color.white);
+                DynamicGI.UpdateEnvironment();
                 break;
             case 4:
                 PlayerPrefs.SetInt("Time", 4);
-                ChangeToTime(nightSkybox, nightOvercastSkybox, nightLightIntensity, nightLightColor);
+                ChangeToTime(nightSkybox, nightOvercastSkybox, 0.22f, Color.white, 0f, Color.white);
+                DynamicGI.UpdateEnvironment();
                 break;
             default:
-                PlayerPrefs.SetInt("Time", 2);
-                ChangeToTime(daySkybox, dayOvercastSkybox, dayLightIntensity, dayLightColor);
+                PlayerPrefs.SetInt("Time", 1);
+                ChangeToTime(daySkybox, dayOvercastSkybox, 0.4f, new Color(0.8018868f, 0.3066828f, 0.1626469f), 0f, Color.white);
+                DynamicGI.UpdateEnvironment();
                 break;
         }
-        DynamicGI.UpdateEnvironment();
     }
 
-    private void ChangeToTime(Material skybox, Material overcastSkybox, float lightIntensity, Color lightColor)
+    private void ChangeToTime(Material skybox, Material overcastSkybox, 
+                                float lightIntensity, Color lightColor, 
+                                float overcastLightIntensity, Color overcastLightColor)
     {
         if(PlayerPrefs.GetInt("isRaining") == 1)
         {
             RenderSettings.skybox = overcastSkybox;
-            UpdateLightSettings(lightColor, lightIntensity);
+            UpdateLightSettings(overcastLightColor, overcastLightIntensity);
+            
         }
         else
         {
@@ -84,10 +85,10 @@ public class ChangeTime : MonoBehaviour
 
     private void UpdateLightSettings(Color lightColor, float lightIntensity)
     {
-        if (directionaLight != null)
+        if (directionalLight != null)
         {
-            directionaLight.color = lightColor;
-            directionaLight.intensity = lightIntensity;
+            directionalLight.GetComponent<Light>().color = lightColor;
+            directionalLight.GetComponent<Light>().intensity  = lightIntensity;
         }
     }
 }
