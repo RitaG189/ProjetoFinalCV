@@ -7,15 +7,22 @@ public class ChangeTime : MonoBehaviour
 {
     [Header("Skyboxes")]
     [SerializeField] private Material morningSkybox;
+    [SerializeField] private Material morningOvercastSkybox;
+
     [SerializeField] private Material daySkybox;
+    [SerializeField] private Material dayOvercastSkybox;
+
     [SerializeField] private Material sunsetSkybox;
+    [SerializeField] private Material sunsetOvercastSkybox;
+
     [SerializeField] private Material nightSkybox;
+    [SerializeField] private Material nightOvercastSkybox;
+
 
     [Header("Light")]
     [SerializeField] private Light directionaLight;
 
     [Header("Light Settings")]
-
     private Color morningLightColor = Color.white; 
     private float morningLightIntensity = 0.56f;   
     private Color dayLightColor = Color.white; 
@@ -38,50 +45,41 @@ public class ChangeTime : MonoBehaviour
         {
             case 1: 
                 PlayerPrefs.SetInt("Time", 1);
-                ChangeToMorning();
+                ChangeToTime(morningSkybox, morningOvercastSkybox, morningLightIntensity, morningLightColor );
                 break;
             case 2: 
                 PlayerPrefs.SetInt("Time", 2);
-                ChangeToDay();
+                ChangeToTime(daySkybox, dayOvercastSkybox, dayLightIntensity, dayLightColor);
                 break;
             case 3: 
                 PlayerPrefs.SetInt("Time", 3);
-                ChangeToSunset();
+                ChangeToTime(sunsetSkybox, sunsetOvercastSkybox, sunsetLightIntensity, sunsetLightColor);
                 break;
             case 4:
                 PlayerPrefs.SetInt("Time", 4);
-                ChangeToNight();
+                ChangeToTime(nightSkybox, nightOvercastSkybox, nightLightIntensity, nightLightColor);
                 break;
             default:
                 PlayerPrefs.SetInt("Time", 2);
-                ChangeToDay();
+                ChangeToTime(daySkybox, dayOvercastSkybox, dayLightIntensity, dayLightColor);
                 break;
         }
         DynamicGI.UpdateEnvironment();
     }
 
-    public void ChangeToMorning()
+    private void ChangeToTime(Material skybox, Material overcastSkybox, float lightIntensity, Color lightColor)
     {
-        RenderSettings.skybox = morningSkybox;
-        UpdateLightSettings(morningLightColor, morningLightIntensity);
-    }
+        if(PlayerPrefs.GetInt("isRaining") == 1)
+        {
+            RenderSettings.skybox = overcastSkybox;
+            UpdateLightSettings(lightColor, lightIntensity);
+        }
+        else
+        {
+            RenderSettings.skybox = skybox;
+            UpdateLightSettings(lightColor, lightIntensity);
+        }
 
-    public void ChangeToDay()
-    {
-        RenderSettings.skybox = daySkybox;
-        UpdateLightSettings(dayLightColor, dayLightIntensity);
-    }
-
-    public void ChangeToSunset()
-    {
-        RenderSettings.skybox = sunsetSkybox;
-        UpdateLightSettings(sunsetLightColor, sunsetLightIntensity);
-    }
-
-    public void ChangeToNight()
-    {
-        RenderSettings.skybox = nightSkybox;
-        UpdateLightSettings(nightLightColor, nightLightIntensity);
     }
 
     private void UpdateLightSettings(Color lightColor, float lightIntensity)

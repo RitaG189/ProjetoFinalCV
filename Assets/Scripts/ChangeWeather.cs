@@ -13,6 +13,10 @@ public class ChangeWeather : MonoBehaviour
 
     private bool isRaining;
 
+    private void Awake() {
+        PlayerPrefs.SetInt("isRaining", 0);
+    }
+
     private void Start() {
         weatherButtonPressed = 0;
         isRaining = false;
@@ -31,15 +35,18 @@ public class ChangeWeather : MonoBehaviour
             {
                 // starts raining
                 emission.enabled = true;
+                PlayerPrefs.SetInt("isRaining", 1);
+                isRaining = true;
             }
             else if(isRaining)
             {
                 //stops raining
                 emission.enabled = false;
-
+                PlayerPrefs.SetInt("isRaining", 0);
+                isRaining = false;
             }
         }
 
-
+        weatherButtonPressed = 0;
     }
 }

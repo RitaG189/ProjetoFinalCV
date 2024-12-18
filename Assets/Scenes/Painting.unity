@@ -6545,9 +6545,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   morningSkybox: {fileID: 2100000, guid: cdbb40e11399e4a17882ada20a1b896a, type: 2}
+  morningOvercastSkybox: {fileID: 2100000, guid: 98368f48731d94af0bdea98f28db3e3e, type: 2}
   daySkybox: {fileID: 2100000, guid: efd1c33efd2d58340b88804268e6833f, type: 2}
+  dayOvercastSkybox: {fileID: 2100000, guid: 32fb9b17cbf9e4852992cf3e3aaeac37, type: 2}
   sunsetSkybox: {fileID: 2100000, guid: c82a334cf5a5e47978749c210cee72a7, type: 2}
+  sunsetOvercastSkybox: {fileID: 2100000, guid: 8dbe2b451a1c547a599797b1d1ef33e7, type: 2}
   nightSkybox: {fileID: 2100000, guid: eac2ef371405749e0bd050b4c3272f16, type: 2}
+  nightOvercastSkybox: {fileID: 2100000, guid: 5357ecb47d4844f07bacead0e7c2df93, type: 2}
   directionaLight: {fileID: 996585398}
   timeButtonPressed: 0
 --- !u!4 &630556730
