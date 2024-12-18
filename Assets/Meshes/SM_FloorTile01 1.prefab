@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1622036675803877561
+--- !u!1001 &6110064751622993700
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.691042
+      value: -11.414911
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 67.682335
+      value: 66.719574
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,12 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
       propertyPath: m_Name
-      value: SM_FloorTile01
+      value: SM_FloorTile01 1
       objectReference: {fileID: 0}
     - target: {fileID: 1233009151899905070, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5a6f925c20db74e30bdf236db366ece1, type: 2}
+      objectReference: {fileID: 2100000, guid: da6879be6f9aa4accbd8e0000f5a0172, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1176437363509977547, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
