@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Museu.unity
+    guid: 1ce7d234610814382b2d5b6b36c0f2fb
+  - enabled: 1
+    path: Assets/Scenes/Painting.unity
+    guid: 0f2f9eb14797344768be962b6ab1fff7
   m_configObjects: {}
