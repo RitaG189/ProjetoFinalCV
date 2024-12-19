@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237a9667860a945a8910b4f3b66e7960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalPosition: {x: 0, y: 0, z: 0}
+  rainingPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &6472138997898840330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pirate
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7cb6e6253355c83498a3e5319586d3fb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ec2a14fbb96bb424f8b3be541a4fd109, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
