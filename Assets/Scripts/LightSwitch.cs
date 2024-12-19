@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class LightSwitch : MonoBehaviour
 {
+    [SerializeField] private bool isLamp;
     void Update()
     {
+
         if(PlayerPrefs.GetInt("Time") == 3 || PlayerPrefs.GetInt("Time") == 4)
         {
-            gameObject.GetComponent<Light>().enabled = true;
+            if(PlayerPrefs.GetInt("isRaining") == 0 || isLamp)
+                gameObject.GetComponent<Light>().enabled = true;
+            else
+                gameObject.GetComponent<Light>().enabled = false;
         }
         else 
         {
