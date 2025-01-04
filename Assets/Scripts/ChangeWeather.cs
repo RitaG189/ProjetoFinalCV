@@ -61,12 +61,14 @@ public class ChangeWeather : MonoBehaviour
             {
                 // starts fog
                 fogEmission.enabled = true;
+                PlayerPrefs.SetInt("isFog", 1);
                 isFog = true;
             }
             else if (isFog)
             {
                 //stops fog
                 fogEmission.enabled = false;
+                PlayerPrefs.SetInt("isFog", 0);
                 isFog = false;
             }
 

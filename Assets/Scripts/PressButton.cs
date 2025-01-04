@@ -17,7 +17,7 @@ public class PressButton : MonoBehaviour
     private void Update() {
         if (canPressButton && Input.GetMouseButtonDown(0) && isTimeButton)
         {
-            GameObject.FindGameObjectWithTag("TimeManager").GetComponent<ChangeTime>().timeButtonPressed = buttonNumber;
+            GameObject.FindGameObjectWithTag("TimeManager").GetComponent<ChangeTime>().timeButtonPressed++;
         }
         else if(canPressButton && Input.GetMouseButtonDown(0) && !isTimeButton)
         {

@@ -58,6 +58,7 @@ public class ChangeTime : MonoBehaviour
                 DynamicGI.UpdateEnvironment();
                 break;
             default:
+                timeButtonPressed = 1;
                 PlayerPrefs.SetInt("Time", 1);
                 ChangeToTime(daySkybox, dayOvercastSkybox, 0.4f, new Color(0.8018868f, 0.3066828f, 0.1626469f), 0f, Color.white);
                 DynamicGI.UpdateEnvironment();
@@ -69,7 +70,7 @@ public class ChangeTime : MonoBehaviour
                                 float lightIntensity, Color lightColor, 
                                 float overcastLightIntensity, Color overcastLightColor)
     {
-        if(PlayerPrefs.GetInt("isRaining") == 1)
+        if(PlayerPrefs.GetInt("isRaining") == 1 || PlayerPrefs.GetInt("isFog") == 1)
         {
             RenderSettings.skybox = overcastSkybox;
             UpdateLightSettings(overcastLightColor, overcastLightIntensity);
