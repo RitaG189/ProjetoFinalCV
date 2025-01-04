@@ -7,11 +7,14 @@ public class ChangeWeather : MonoBehaviour
     [Header("Weather Effects")]
 
     [SerializeField] private ParticleSystem rainParticleSystem;
+    [SerializeField] private ParticleSystem fogParticleSystem;
+
 
     [Header("Button Pressed")]
     public int weatherButtonPressed;
 
     private bool isRaining;
+    private bool isFog;
 
     private void Awake() {
         PlayerPrefs.SetInt("isRaining", 0);
@@ -20,31 +23,53 @@ public class ChangeWeather : MonoBehaviour
     private void Start() {
         weatherButtonPressed = 0;
         isRaining = false;
+        isFog = false;
 
-        var emission = rainParticleSystem.emission;
-        emission.enabled = false;
+        var rainEmission = rainParticleSystem.emission;
+        rainEmission.enabled = false;
+
+        var fogEmission = fogParticleSystem.emission;
+        fogEmission.enabled = false;
     }
 
     private void Update() 
     {
-        var emission = rainParticleSystem.emission;
+        var rainEmission = rainParticleSystem.emission;
+        var fogEmission = fogParticleSystem.emission;
 
-        if(weatherButtonPressed == 1) 
+
+        if (weatherButtonPressed == 1) 
         {
             if(!isRaining)
             {
                 // starts raining
-                emission.enabled = true;
+                rainEmission.enabled = true;
                 PlayerPrefs.SetInt("isRaining", 1);
                 isRaining = true;
             }
             else if(isRaining)
             {
                 //stops raining
-                emission.enabled = false;
+                rainEmission.enabled = false;
                 PlayerPrefs.SetInt("isRaining", 0);
                 isRaining = false;
             }
+        }
+        else if(weatherButtonPressed == 2)
+        {
+            if (!isFog)
+            {
+                // starts fog
+                fogEmission.enabled = true;
+                isFog = true;
+            }
+            else if (isFog)
+            {
+                //stops fog
+                fogEmission.enabled = false;
+                isFog = false;
+            }
+
         }
 
         weatherButtonPressed = 0;
