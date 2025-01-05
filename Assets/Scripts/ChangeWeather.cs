@@ -6,8 +6,9 @@ public class ChangeWeather : MonoBehaviour
 {
     [Header("Weather Effects")]
 
-    [SerializeField] private ParticleSystem rainParticleSystem;
-    [SerializeField] private ParticleSystem fogParticleSystem;
+    [SerializeField] private GameObject rainParticleSystem;
+    [SerializeField] private GameObject fogParticleSystem;
+    [SerializeField] private GameObject thunderSystem;
 
 
     [Header("Button Pressed")]
@@ -15,65 +16,83 @@ public class ChangeWeather : MonoBehaviour
 
     private bool isRaining;
     private bool isFog;
+    private bool isThunder;
 
     private void Awake() {
         PlayerPrefs.SetInt("isRaining", 0);
+        PlayerPrefs.SetInt("isFog", 0);
+        PlayerPrefs.SetInt("isThunder", 0);
+
     }
 
     private void Start() {
         weatherButtonPressed = 0;
         isRaining = false;
         isFog = false;
+        isThunder = false;
 
-        var rainEmission = rainParticleSystem.emission;
-        rainEmission.enabled = false;
+        rainParticleSystem.SetActive(false);
+        fogParticleSystem.SetActive(false);
+        thunderSystem.SetActive(false);
 
-        var fogEmission = fogParticleSystem.emission;
-        fogEmission.enabled = false;
     }
 
     private void Update() 
     {
-        var rainEmission = rainParticleSystem.emission;
-        var fogEmission = fogParticleSystem.emission;
-
-
-        if (weatherButtonPressed == 1) 
+        switch(weatherButtonPressed)
         {
-            if(!isRaining)
-            {
-                // starts raining
-                rainEmission.enabled = true;
-                PlayerPrefs.SetInt("isRaining", 1);
-                isRaining = true;
-            }
-            else if(isRaining)
-            {
-                //stops raining
-                rainEmission.enabled = false;
-                PlayerPrefs.SetInt("isRaining", 0);
-                isRaining = false;
-            }
-        }
-        else if(weatherButtonPressed == 2)
-        {
-            if (!isFog)
-            {
-                // starts fog
-                fogEmission.enabled = true;
-                PlayerPrefs.SetInt("isFog", 1);
-                isFog = true;
-            }
-            else if (isFog)
-            {
-                //stops fog
-                fogEmission.enabled = false;
-                PlayerPrefs.SetInt("isFog", 0);
-                isFog = false;
-            }
+            case 1:
+                if (!isRaining)
+                {
+                    // starts raining
+                    rainParticleSystem.SetActive(true);
+                    //rainEmission.enabled = true;
+                    PlayerPrefs.SetInt("isRaining", 1);
+                    isRaining = true;
+                }
+                else if (isRaining)
+                {
+                    //stops raining
+                    rainParticleSystem.SetActive(false);
 
+                    //rainEmission.enabled = false;
+                    PlayerPrefs.SetInt("isRaining", 0);
+                    isRaining = false;
+                }
+                break;
+            case 2:
+                if (!isFog)
+                {
+                    // starts fog
+                    fogParticleSystem.SetActive(true);
+                    PlayerPrefs.SetInt("isFog", 1);
+                    isFog = true;
+                }
+                else if (isFog)
+                {
+                    //stops fog
+                    fogParticleSystem.SetActive(false);
+                    PlayerPrefs.SetInt("isFog", 0);
+                    isFog = false;
+                }
+                break;
+            case 3:
+                if(!isThunder)
+                {
+                    thunderSystem.SetActive(true);
+                    PlayerPrefs.SetInt("isThunder", 1);
+                    isThunder = true;
+                }
+                else if(isThunder)
+                {
+                    thunderSystem.SetActive(false);
+                    PlayerPrefs.SetInt("isThunder", 0);
+                    isThunder = false;
+                }
+                break;
         }
 
         weatherButtonPressed = 0;
+
     }
 }

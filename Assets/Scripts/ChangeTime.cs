@@ -70,7 +70,7 @@ public class ChangeTime : MonoBehaviour
                                 float lightIntensity, Color lightColor, 
                                 float overcastLightIntensity, Color overcastLightColor)
     {
-        if(PlayerPrefs.GetInt("isRaining") == 1 || PlayerPrefs.GetInt("isFog") == 1)
+        if(PlayerPrefs.GetInt("isRaining") == 1 || PlayerPrefs.GetInt("isFog") == 1 || PlayerPrefs.GetInt("isThunder") == 1)
         {
             RenderSettings.skybox = overcastSkybox;
             UpdateLightSettings(overcastLightColor, overcastLightIntensity);
