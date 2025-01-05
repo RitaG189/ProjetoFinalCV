@@ -13491,7 +13491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1513176370
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -26458,18 +26458,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7141831862765790673, guid: 5d403413800256543b787f3236db52dd, type: 3}
   m_PrefabInstance: {fileID: 1188517642}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2091662034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408532665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ccd25eb2e6a7b4db8180ecddcce110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2092429669
 GameObject:
   m_ObjectHideFlags: 0
