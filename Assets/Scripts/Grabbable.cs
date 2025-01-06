@@ -6,9 +6,9 @@ public class Grabbable : MonoBehaviour
 {
     private Rigidbody objectRigidbody;
     private Transform grabPointTransform;
-    private float currentDistance = 0.5f;
+    private float currentDistance = 0.8f;
     private float minDistance = 0.5f;
-    private float maxDistance = 0.8f;
+    private float maxDistance = 1.0f;
 
     private void Awake()
     {
