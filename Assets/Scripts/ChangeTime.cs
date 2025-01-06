@@ -21,7 +21,9 @@ public class ChangeTime : MonoBehaviour
 
 
     [Header("Light")]
-    [SerializeField] private GameObject directionalLight;
+    [SerializeField] private GameObject directionalLightMorning;
+    [SerializeField] private GameObject directionalLightDay;
+
 
 
 
@@ -73,17 +75,17 @@ public class ChangeTime : MonoBehaviour
         if(PlayerPrefs.GetInt("isRaining") == 1 || PlayerPrefs.GetInt("isFog") == 1 || PlayerPrefs.GetInt("isThunder") == 1)
         {
             RenderSettings.skybox = overcastSkybox;
-            UpdateLightSettings(overcastLightColor, overcastLightIntensity);
+            //UpdateLightSettings(overcastLightColor, overcastLightIntensity);
             
         }
         else
         {
             RenderSettings.skybox = skybox;
-            UpdateLightSettings(lightColor, lightIntensity);
+            //UpdateLightSettings(lightColor, lightIntensity);
         }
 
     }
-
+    /*
     private void UpdateLightSettings(Color lightColor, float lightIntensity)
     {
         if (directionalLight != null)
@@ -91,5 +93,5 @@ public class ChangeTime : MonoBehaviour
             directionalLight.GetComponent<Light>().color = lightColor;
             directionalLight.GetComponent<Light>().intensity  = lightIntensity;
         }
-    }
+    }*/
 }

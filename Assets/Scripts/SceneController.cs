@@ -10,11 +10,8 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         player.transform.position = teleportDestination.position;
+        PlayerPrefs.SetString("CurrentScene", "Museum");
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
