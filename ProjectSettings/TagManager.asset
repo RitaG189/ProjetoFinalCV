@@ -8,6 +8,7 @@ TagManager:
   - TimeManager
   - WeatherManager
   - Chao
+  - Explode
   layers:
   - Default
   - TransparentFX
