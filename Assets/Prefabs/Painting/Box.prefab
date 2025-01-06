@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box
       objectReference: {fileID: 0}
+    - target: {fileID: 1701301799562459933, guid: 3cd5830f003db2d4c99e67f576046320, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3425960010512260341, guid: 3cd5830f003db2d4c99e67f576046320, type: 3}
