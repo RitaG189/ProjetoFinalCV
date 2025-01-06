@@ -7,6 +7,10 @@ public class MovementSound : MonoBehaviour
     private InputAction moveAction;
     private AudioSource movementAudioSource;
 
+    [SerializeField] private AudioClip stepsAudioClip;
+    [SerializeField] private AudioClip walkingOutsideAudioClip;
+
+
     private void Start()
     {
         // Obtém o PlayerInput e a ação de movimento
@@ -23,6 +27,15 @@ public class MovementSound : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerPrefs.GetString("CurrentScene") == "Museum")
+        {
+            movementAudioSource.clip = stepsAudioClip;
+        }
+        else if(PlayerPrefs.GetString("CurrentScene") == "Painting")
+        {
+            movementAudioSource.clip = walkingOutsideAudioClip;
+        }
+
         // Verifica se há um AudioSource configurado
         if (movementAudioSource == null) return;
 
