@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Museu.unity
     guid: 1ce7d234610814382b2d5b6b36c0f2fb
   - enabled: 1
