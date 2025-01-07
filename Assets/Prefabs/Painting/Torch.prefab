@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2534892318327610648}
   - component: {fileID: 3753578626638637608}
   - component: {fileID: 5082542540141916315}
+  - component: {fileID: 3451531417745077523}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -108,6 +109,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6099800089077584851, guid: 496e222ea6fbe45ee8e85fd75ed23d94, type: 3}
+--- !u!114 &3451531417745077523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170683090842845614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e91a7c165f9ddf4dabd7007ed23e5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePS: {fileID: 1614810932833263171}
 --- !u!1 &4510560964051369120
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,5 +290,10 @@ PrefabInstance:
 --- !u!4 &571820555043385132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1206184769272340213, guid: f2f8868faf84389468c25e3ea935363a, type: 3}
+  m_PrefabInstance: {fileID: 1680609483720913369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1614810932833263171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 88467354340028314, guid: f2f8868faf84389468c25e3ea935363a, type: 3}
   m_PrefabInstance: {fileID: 1680609483720913369}
   m_PrefabAsset: {fileID: 0}

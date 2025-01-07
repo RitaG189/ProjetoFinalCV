@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class FireSwitch : MonoBehaviour
 {
+    [SerializeField] private GameObject firePS;
+    [SerializeField] private bool isBonfire;
 
     void Update()
     {
-        var fireEmission = gameObject.GetComponent<ParticleSystem>().emission;
-        if ((PlayerPrefs.GetInt("Time") == 3 || PlayerPrefs.GetInt("Time") == 4) && PlayerPrefs.GetInt("isRaining") == 0)
+
+        if ((PlayerPrefs.GetInt("Time") == 3 || PlayerPrefs.GetInt("Time") == 4 || isBonfire) && PlayerPrefs.GetInt("isRaining") == 0)
         {
-            fireEmission.enabled = true;
+            firePS.SetActive(true);
         }
         else
         {
-            fireEmission.enabled = false;
+            firePS.SetActive(false);
         }
     }
 }
