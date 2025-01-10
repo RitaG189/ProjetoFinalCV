@@ -8,6 +8,7 @@ public class BreakObject : MonoBehaviour
 
     [SerializeField] GameObject intactObject;
     [SerializeField] GameObject brokenObject;
+    [SerializeField] AudioSource audioSource;
 
     BoxCollider bc;
 
@@ -34,6 +35,8 @@ public class BreakObject : MonoBehaviour
     {
         intactObject.SetActive(false);
         brokenObject.SetActive(true);
+
+        audioSource.Play();
 
         bc.enabled = false;
     }

@@ -9,6 +9,10 @@ TagManager:
   - WeatherManager
   - Chao
   - Explode
+  - ButtonTime
+  - ButtonFog
+  - ButtonRain
+  - ButtonThunder
   layers:
   - Default
   - TransparentFX

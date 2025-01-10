@@ -5,7 +5,8 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private Transform teleportDestination; 
+    [SerializeField] private Transform teleportDestination;
+    [SerializeField] private GameObject museumLights;
 
     void Start()
     {
@@ -13,5 +14,6 @@ public class SceneController : MonoBehaviour
         PlayerPrefs.SetString("CurrentScene", "Museum");
 
     }
+
 
 }

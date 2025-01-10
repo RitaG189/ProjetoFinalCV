@@ -64,6 +64,7 @@ public class ChangeWeather : MonoBehaviour
                 if (!isFog)
                 {
                     // starts fog
+                    //RenderSettings.fog = true;
                     fogParticleSystem.SetActive(true);
                     PlayerPrefs.SetInt("isFog", 1);
                     isFog = true;
@@ -71,6 +72,7 @@ public class ChangeWeather : MonoBehaviour
                 else if (isFog)
                 {
                     //stops fog
+                    //RenderSettings.fog = false;
                     fogParticleSystem.SetActive(false);
                     PlayerPrefs.SetInt("isFog", 0);
                     isFog = false;

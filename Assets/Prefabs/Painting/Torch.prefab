@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePS: {fileID: 1614810932833263171}
+  isBonfire: 0
 --- !u!1 &4510560964051369120
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8962264, g: 0.6829032, b: 0.26633143, a: 1}
   m_Intensity: 2.21
-  m_Range: 1.83
+  m_Range: 2.3801715
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

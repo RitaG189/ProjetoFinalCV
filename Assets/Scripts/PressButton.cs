@@ -5,8 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PressButton : MonoBehaviour
 {
-    [SerializeField] private int buttonNumber;
-    [SerializeField] private bool isTimeButton;
+    [SerializeField] int buttonNumber;
+    [SerializeField] bool isTimeButton;
+
+    [SerializeField] GameObject timeUI;
+    [SerializeField] GameObject rainUI;
+    [SerializeField] GameObject fogUI;
+    [SerializeField] GameObject thunderUI;
 
     private bool canPressButton;
 
@@ -15,26 +20,53 @@ public class PressButton : MonoBehaviour
     }
 
     private void Update() {
-        if (canPressButton && Input.GetMouseButtonDown(0) && isTimeButton)
+        if (canPressButton && isTimeButton)
         {
-            GameObject.FindGameObjectWithTag("TimeManager").GetComponent<ChangeTime>().timeButtonPressed++;
+            if (Input.GetMouseButtonDown(0))
+                GameObject.FindGameObjectWithTag("TimeManager").GetComponent<ChangeTime>().timeButtonPressed++;
         }
-        else if(canPressButton && Input.GetMouseButtonDown(0) && !isTimeButton)
+
+        if (canPressButton && !isTimeButton)
         {
-            GameObject.FindGameObjectWithTag("WeatherManager").GetComponent<ChangeWeather>().weatherButtonPressed = buttonNumber;
+            if (Input.GetMouseButtonDown(0))
+                GameObject.FindGameObjectWithTag("WeatherManager").GetComponent<ChangeWeather>().weatherButtonPressed = buttonNumber;
         }
+
     }
     
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
             canPressButton = true;
-        
+
+        if (this.CompareTag("ButtonTime"))
+            timeUI.SetActive(true);
+
+        if (this.CompareTag("ButtonRain"))
+            rainUI.SetActive(true);
+
+        if (this.CompareTag("ButtonFog"))
+            fogUI.SetActive(true);
+
+        if (this.CompareTag("ButtonThunder"))
+            thunderUI.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other) 
     {
         if(other.CompareTag("Player"))
             canPressButton = false;
+
+        if (this.CompareTag("ButtonTime"))
+            timeUI.SetActive(false);
+
+        if (this.CompareTag("ButtonRain"))
+            rainUI.SetActive(false);
+
+        if (this.CompareTag("ButtonFog"))
+            fogUI.SetActive(false);
+
+        if (this.CompareTag("ButtonThunder"))
+            thunderUI.SetActive(false);
     }
 }
