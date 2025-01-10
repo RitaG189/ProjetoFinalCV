@@ -53,6 +53,14 @@ PrefabInstance:
       value: SM_Column01
       objectReference: {fileID: 0}
     - target: {fileID: 4441180824717592388, guid: eb978c6d06a2c4c09bb5fe0d06a74e43, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441180824717592388, guid: eb978c6d06a2c4c09bb5fe0d06a74e43, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441180824717592388, guid: eb978c6d06a2c4c09bb5fe0d06a74e43, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 669fecb637dac4fcdb82e8e2c26d98aa, type: 2}

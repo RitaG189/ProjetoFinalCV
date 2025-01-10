@@ -53,6 +53,10 @@ PrefabInstance:
       value: SM_FloorTile01 1
       objectReference: {fileID: 0}
     - target: {fileID: 1233009151899905070, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233009151899905070, guid: dc494b49c5c8d469082b2e3320306176, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: da6879be6f9aa4accbd8e0000f5a0172, type: 2}
