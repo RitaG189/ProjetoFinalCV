@@ -34,11 +34,11 @@ public class Grabbable : MonoBehaviour
         if (grabPointTransform != null)
         {
             //Aproximar ou afastar o objeto
-            if (Input.GetKey(KeyCode.Keypad1))
+            if (Input.GetKey(KeyCode.Keypad1) || Input.GetKey(KeyCode.N))
             {
                 currentDistance = Mathf.Max(minDistance, currentDistance - 0.01f); //Aproximar
             }
-            if (Input.GetKey(KeyCode.Keypad3))
+            if (Input.GetKey(KeyCode.Keypad3) || Input.GetKey(KeyCode.M))
             {
                 currentDistance = Mathf.Min(maxDistance, currentDistance + 0.01f); //Afastar
             }
@@ -55,12 +55,12 @@ public class Grabbable : MonoBehaviour
             float rotationY = 0f;
             float rotationZ = 0f;
 
-            if (Input.GetKey(KeyCode.Keypad8)) rotationX = rotationSpeed * Time.deltaTime; //Cima
-            if (Input.GetKey(KeyCode.Keypad2)) rotationX = -rotationSpeed * Time.deltaTime;  //Baixo
-            if (Input.GetKey(KeyCode.Keypad4)) rotationY = rotationSpeed * Time.deltaTime; //Esquerda
-            if (Input.GetKey(KeyCode.Keypad6)) rotationY = -rotationSpeed * Time.deltaTime;  //Direita
-            if (Input.GetKey(KeyCode.Keypad7)) rotationZ = rotationSpeed * Time.deltaTime; //Inclina Esquerda
-            if (Input.GetKey(KeyCode.Keypad9)) rotationZ = -rotationSpeed * Time.deltaTime;  //Inclina Direita
+            if (Input.GetKey(KeyCode.Keypad8) || Input.GetKey(KeyCode.U)) rotationX = rotationSpeed * Time.deltaTime; //Cima
+            if (Input.GetKey(KeyCode.Keypad2) || Input.GetKey(KeyCode.J)) rotationX = -rotationSpeed * Time.deltaTime;  //Baixo
+            if (Input.GetKey(KeyCode.Keypad4) || Input.GetKey(KeyCode.H)) rotationY = rotationSpeed * Time.deltaTime; //Esquerda
+            if (Input.GetKey(KeyCode.Keypad6) || Input.GetKey(KeyCode.K)) rotationY = -rotationSpeed * Time.deltaTime;  //Direita
+            if (Input.GetKey(KeyCode.Keypad7) || Input.GetKey(KeyCode.Y)) rotationZ = rotationSpeed * Time.deltaTime; //Inclina Esquerda
+            if (Input.GetKey(KeyCode.Keypad9) || Input.GetKey(KeyCode.I)) rotationZ = -rotationSpeed * Time.deltaTime;  //Inclina Direita
 
             Quaternion rotationIncrement = Quaternion.Euler(rotationX, rotationY, rotationZ);
 

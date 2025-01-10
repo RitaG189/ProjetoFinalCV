@@ -73,7 +73,7 @@ Shader "Custom/WindEffect"
                 float3 safeWorldNormal = IN.worldNormal;
                 if (dot(safeWorldNormal, safeWorldNormal) < 0.001)
                 {
-                    safeWorldNormal = float3(0, 1, 0); // Default to up vector
+                    safeWorldNormal = float3(0, 1, 0); //up vector
                 }
 
                 o.Normal = WorldNormalVector(IN, safeWorldNormal);
