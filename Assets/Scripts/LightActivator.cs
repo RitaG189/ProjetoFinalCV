@@ -8,7 +8,7 @@ public class LightActivator : MonoBehaviour
 
     void Start()
     {
-        // Obter a luz e a câmera principal
+        // Obter a luz e a cï¿½mera principal
         lightSource = GetComponent<Light>();
         mainCamera = Camera.main;
         objectRenderer = GetComponent<Renderer>(); // Para objetos com Renderers
@@ -18,11 +18,13 @@ public class LightActivator : MonoBehaviour
     {
         if (IsVisibleFrom(mainCamera))
         {
-            if (!lightSource.enabled) // Ativa apenas se ainda não estiver ativa
+            print("isVisible");
+            if (!lightSource.enabled) // Ativa apenas se ainda nï¿½o estiver ativa
                 lightSource.enabled = true;
         }
         else
         {
+            print("isNotVisible");
             if (lightSource.enabled) // Desativa apenas se estiver ativa
                 lightSource.enabled = false;
         }
@@ -39,7 +41,7 @@ public class LightActivator : MonoBehaviour
         }
         else
         {
-            // Caso não tenha um Renderer (por exemplo, apenas luzes), usa a posição
+            // Caso nï¿½o tenha um Renderer (por exemplo, apenas luzes), usa a posiï¿½ï¿½o
             return GeometryUtility.TestPlanesAABB(planes, new Bounds(transform.position, Vector3.one));
         }
     }
