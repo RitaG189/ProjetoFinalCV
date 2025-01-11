@@ -7,14 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Arch_MAT
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Water 1
+  m_Shader: {fileID: 4800000, guid: 6a2c1a486e1fc8a4cb6b3cbb9f2ecd5e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _METALLICGLOSSMAP
-  - _NORMALMAP
-  - _PARALLAXMAP
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -27,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 1413f797224cdb64e9fabacd7eefc877, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -47,40 +44,65 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b2bb443f6acf38e43aaa56b4eb8bae31, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: c1b8f83302c95b1409a25d6e21b4cd37, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: e0de0a1f2103bf94bb7fff51990b5417, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal1:
+        m_Texture: {fileID: 2800000, guid: 948d72bd928be4e498be7e5c27746cf9, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - _Normal2:
+        m_Texture: {fileID: 2800000, guid: 4cbfc0d80e31ef8428b426ab3a1b03ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 5c6ddc4768dcfe543b363b842237a2ca, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: c1b8f83302c95b1409a25d6e21b4cd37, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DepthFactor: 7.74
+    - _DepthPow: 11.44
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 0
-    - _Glossiness: 0
+    - _ExtraHeight: 0
+    - _Gloss: 0.576
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _IntersectionPow: 1.19
+    - _IntersectionThreshold: 0.93
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.005
+    - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Transparency: 1
     - _UVSec: 0
+    - _WaveAmp: 0.02
+    - _WaveSpeed: 200.05
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8018868, g: 0.74900544, b: 0.631675, a: 1}
+    - _Color: {r: 0.06728373, g: 0.13333827, b: 0.2264151, a: 1}
+    - _Color2: {r: 0.050980393, g: 0.42352942, b: 0.8, a: 0.5254902}
+    - _EdgeColor: {r: 0.0489498, g: 0.103525475, b: 0.18867922, a: 0.15686275}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _normalVelocit1: {r: 1, g: 1, b: 0, a: 0}
+    - _normalVelocit2: {r: -1, g: -1, b: 0, a: 0}
   m_BuildTextureStacks: []
